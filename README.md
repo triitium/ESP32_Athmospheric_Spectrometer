@@ -64,6 +64,8 @@ Edit `main.h` for:
 * `BLE_MTU` – maximum bytes per BLE notification.
 * `MEASUREMENT_INTERVAL_MS` - time between measurements
 
+These can be changed in `platformio.ini` aswell!
+
 `platformio.ini` provides PlatformIO configuration:
 
 ```ini
