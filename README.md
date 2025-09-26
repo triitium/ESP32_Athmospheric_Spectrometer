@@ -62,6 +62,7 @@ Edit `main.h` for:
 * `PIXELS` – number of pixels per CCD line.
 * `SAMPLE_SIZE` – number of lines to average.
 * `BLE_MTU` – maximum bytes per BLE notification.
+* `MEASUREMENT_INTERVAL_MS` - time between measurements
 
 `platformio.ini` provides PlatformIO configuration:
 
@@ -72,7 +73,10 @@ board = esp32dev
 framework = espidf
 monitor_speed = 115200
 build_flags =
+    -D PIXELS=3648
+    -D SAMPLE_SIZE=10
     -D BLE_MTU=512
+    -D MEASUREMENT_INTERVAL_MS=300000
 ```
 
 ---
