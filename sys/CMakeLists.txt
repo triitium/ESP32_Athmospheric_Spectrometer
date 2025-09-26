@@ -1,2 +1,4 @@
-idf_component_register(SRCS "main.c" "ble_callbacks.c"
-                    INCLUDE_DIRS ".")
+idf_component_register(
+    SRCS "src/main.c" "src/ble_callbacks.c"
+    INCLUDE_DIRS "inc"
+)
