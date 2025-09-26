@@ -3,7 +3,7 @@
 
 #define TAG "BLE_CB"
 
-// These globals are defined in main.c as extern
+// Globals from main.c
 extern uint16_t char_handle;
 extern uint16_t conn_id;
 extern esp_gatt_if_t gatts_if;
@@ -25,13 +25,13 @@ void gatts_event_handler(esp_gatts_cb_event_t event,
             break;
 
         case ESP_GATTS_DISCONNECT_EVT:
-            ESP_LOGI(TAG, "Client disconnected");
             notify_enabled = false;
+            ESP_LOGI(TAG, "Client disconnected");
             break;
 
         case ESP_GATTS_WRITE_EVT:
-            // Enable/disable notifications if client writes to CCCD
-            if(param->write.handle == char_handle + 1){ // CCCD
+            // Handle CCCD writes (enable/disable notifications)
+            if(param->write.handle == char_handle + 1){
                 uint16_t value = param->write.value[0] | (param->write.value[1]<<8);
                 notify_enabled = (value == 1);
                 ESP_LOGI(TAG, "Notify %s", notify_enabled ? "enabled" : "disabled");
