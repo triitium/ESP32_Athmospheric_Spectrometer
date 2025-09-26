@@ -104,14 +104,6 @@ idf.py flash monitor
 
 ---
 
-## **Flowchart**
-
-```
-[Acquisition Task] --> [Raw Line Queue] --> [Averaging Task] --> [Average Line Queue] --> [BLE Task] --> BLE Client
-```
-
----
-
 ## **License**
 
 MIT License. Free to use and modify.
