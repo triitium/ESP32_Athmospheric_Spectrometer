@@ -95,11 +95,10 @@ idf.py flash monitor
 
 ---
 
-## **Usage**
+## **Working Principle**
 
-1. Power the ESP32 and connect the TCD1304 sensor.
-2. The ESP32 will continuously acquire lines, average them, and expose BLE notifications.
-3. Any BLE client can subscribe to receive the averaged data.
+1. The ESP32 will continuously acquire lines, average them, and expose BLE notifications.
+2. Any BLE client can subscribe to receive the averaged data.
 
 **Note:** Lost data is irrelevant; the system does not buffer past results beyond the averaging window.
 
